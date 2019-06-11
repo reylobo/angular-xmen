@@ -1,0 +1,14 @@
+<div *ngIf="mutant">
+
+<h2>{{mutant.name | uppercase}} Details:</h2>
+<div><img style="width:200px; height:200px" [src]="mutant.picture | safeURL"></div>
+<div><span>Id: </span> {{mutant.id}} </div>
+<div><span>Superpower: </span> {{mutant.superpower}} </div>
+<div>
+  <label>EDIT SUPERPOWER:
+  	<textarea rows="1" cols="50" [(ngModel)]="mutant.superpower"> </textarea>
+  </label>
+</div>
+
+</div>
+

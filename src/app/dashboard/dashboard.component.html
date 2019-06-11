@@ -1,0 +1,9 @@
+<h3>Top Mutants</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let mutant of mutants" class="col-1-4"
+  	  routerLink="/detail/{{mutant.id}}">
+  	<div class="module mutant">
+  		<img style="width:100px; height:100px" [src]="mutant.picture | safeURL">
+  	</div>
+  </a>
+</div>
