@@ -18,9 +18,9 @@ export class MutantsComponent implements OnInit {
     this.getMutants();
   }
 
-  onSelect(mutant: Mutant): void {
-  	this.selectedMutant = mutant;
-  }
+  // onSelect(mutant: Mutant): void {
+  // 	this.selectedMutant = mutant;
+  // }
 
   getMutants(): void {
     this.mutantService.getMutants()
