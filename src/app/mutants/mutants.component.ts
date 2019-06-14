@@ -27,4 +27,18 @@ export class MutantsComponent implements OnInit {
       .subscribe(mutants => this.mutants = mutants);
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.mutantService.addMutant({ name } as Mutant)
+    .subscribe(mutant => {
+      this.mutants.push(mutant);
+    });
+  }
+
+  delete(mutant: Mutant): void {
+    this.mutants = this.mutants.filter(m => m !== mutant);
+    this.mutantService.deleteMutant(mutant).subscribe();
+  }
+
 }

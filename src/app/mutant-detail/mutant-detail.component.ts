@@ -34,4 +34,8 @@ export class MutantDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    this.mutantService.updateMutant(this.mutant)
+    .subscribe(() => this.goBack());
+  }
 }

@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { MutantSearchComponent } from './mutant-search/mutant-search.component';
  
 @NgModule({
   declarations: [
@@ -22,14 +23,19 @@ import { InMemoryDataService } from './in-memory-data.service';
     MutantDetailComponent,
     MessagesComponent,
     VilliansComponent,
-    DashboardComponent
+    DashboardComponent,
+    MutantSearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientInMemoryWebApiModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule
+
+    HttpClientInMemoryWebApiModule.forRoot(
+        InMemoryDataService, { dataEncapsulation: false }
+      )
   ],
   providers: [],
   bootstrap: [AppComponent]

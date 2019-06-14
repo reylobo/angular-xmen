@@ -1,0 +1,14 @@
+<div id="search-component">
+	<h4><label for="search-box">Mutant Search</label></h4>
+
+	<input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+	<ul class="search-result">
+		<li *ngFor="let mutant of mutants$ | async" >
+			<a routerLink="/detail/{{mutant.id}}">
+				{{mutant.name}}
+			</a>
+		</li>
+	</ul>
+	
+</div>

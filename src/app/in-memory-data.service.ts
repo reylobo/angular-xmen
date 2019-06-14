@@ -40,7 +40,7 @@ export class InMemoryDataService {
 }
 
   genId(mutants: Mutant[]): number {
-	return mutants.length > 0 ? Math.max(...mutants.map(mutant => mutant.id)) + 1 : 11;
+	  return mutants.length > 0 ? Math.max(...mutants.map(mutant => mutant.id)) + 1 : 11;
   }
 
   constructor() { }
